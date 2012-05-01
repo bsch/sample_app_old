@@ -34,7 +34,7 @@ describe PagesController do
   describe "GET 'about'" do
     it "should be successfull" do
       get 'about'
-      response.should be success
+      response.should be_success
     end
       
     it "should have the right title" do
