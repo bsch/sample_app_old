@@ -5,7 +5,7 @@ describe PagesController do
 
 before(:each) do
   @base_title = "Ruby on Rails Tutorial Sample App"
-end
+end 
 
   describe "GET 'home'" do
     it "returns http success" do
@@ -45,7 +45,7 @@ end
                       :content => @base_title + " | About")
     end
   end
-  
+ 
   describe "GET 'help'" do
      it "should be successfull" do
        get 'help'
