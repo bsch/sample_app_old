@@ -1,6 +1,7 @@
 SampleApp::Application.routes.draw do
+  resources :users
   
-  get "users/new"
+  #get "users/new"  # not required after :users declared as resource above.
 
   #get "pages/home"
   #get "pages/contact"
