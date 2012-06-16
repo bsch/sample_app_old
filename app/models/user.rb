@@ -30,7 +30,8 @@ class User < ActiveRecord::Base
                         
   before_save :encrypt_password
   
-  # Return true if the user's password matches the submitted password.
+# Return true if the user's password matches the submitted password.
+  
   def has_password?(submitted_password)
     encrypted_password == encrypt(submitted_password)
   end
@@ -40,8 +41,44 @@ class User < ActiveRecord::Base
     return nil if user.nil?
     return user if user.has_password? (submitted_password)
   end
-    
+
+  def User.authenticate(email, submitted_password)
+    user = find_by_email(email)
+    return nil if user.nil?
+    return user if user.has_password? (submitted_password)
+  end
   
+  def self.authenticate(email, submitted_password)
+    user = find_by_email(email)
+    return nil if user.nil?
+    return user if user.has_password? (submitted_password)
+    return nil
+  end
+  
+  def self.authenticate(email, submitted_password)
+    user = find_by_email(email)
+    if user.nil?
+      nil
+    elsif user.has_password?(submitted_password)
+      user
+    else
+      nil
+    end
+  end
+  
+  def self.authenticate(email, submitted_email)
+    user = find_by_email(email)
+    if user.nil?
+      nil
+    elsif user.has_password?(submitted_password)
+      user
+    end
+  end
+
+  def self.authenticate (email, submitted_password)
+    user = find_by_email(email)
+    user && user.has_password?(submitted_password) ? user : nil
+  end
   
 private
   
