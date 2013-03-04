@@ -3,8 +3,19 @@
 	<nav class='round'>
 		<ul>
 			<li><%= link_to "Home", root_path %></li>
+			
+			<li><%= link_to "Profile", current_user %></li>
+			
+			<% if signed_in? == true %>
+			<li><%= link_to "Profile", current_user %></li>
+			<% end %>
 			<li><%= link_to "Help", help_path %></li>
-			<li><%= link_to "Sign in", '#' %></li>
+			<% if signed_in? != true %>
+			<li><%= link_to "Sign out", signout_path, :method => :delete %></li>
+			<% else %>
+			<li><%= link_to "Sign in", signin_path %></li>
+			<% end %>
+			<li><%= link_to "Sign in", signin_path %></li>
 		</ul>
 	</nav>
 </header>

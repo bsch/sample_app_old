@@ -123,8 +123,9 @@ DEPENDENCIES
   factory_girl_rails
   gravatar_image_tag
   jquery-rails
-  rails (= 3.2.3)
-  rspec
+  rails
+  rspec (= 2.9.0)
+  rspec-core (= 2.9.0)
   rspec-rails
   spork
   sqlite3-ruby
