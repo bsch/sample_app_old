@@ -124,8 +124,8 @@ DEPENDENCIES
   gravatar_image_tag
   jquery-rails
   rails
-  rspec (= 2.9.0)
-  rspec-core (= 2.9.0)
+  rspec
+  rspec-core
   rspec-rails
   spork
   sqlite3-ruby
